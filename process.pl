@@ -28,9 +28,6 @@ $object->_load_ua('dc_base2.des');
 
 my @types = $object->_display_records(1);
 
-#print Dumper $object->_display_records(1);
-#$object->display_template('BASEII_TC57_5_MCC');
-
 for my $record (@$data_ref) {
 
     if (( $object->_get_entity($record, 'MSG BASEII_TC57_5_MCC', 'recordType') eq '2' )  and 
