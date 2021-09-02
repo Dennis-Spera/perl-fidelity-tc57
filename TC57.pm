@@ -76,8 +76,8 @@ elsif ( $type eq 'BASEII_TC57_7_CHIP_RECORD_EXTENSION') {
 }
 
 open my $fh,"<$self->{_template_file}" or $self->err( __PACKAGE__, __LINE__, {  errno      => '1012', 
-   	      	                                                                    errstr     => "not able to read $self->{_template_file}", 
-   	      	                                                                    force_exit => 1 });
+   	      	                                                                errstr     => "not able to read $self->{_template_file}", 
+   	      	                                                                force_exit => 1 });
 	
   while (<$fh>) {
   	chomp;
@@ -144,8 +144,8 @@ my $method = shift;
 
   if (scalar(@$ref) == 0 ) {
      $self->err( __PACKAGE__, __LINE__, {  errno      => '1029', 
-   	                                       errstr     => "_load_ua('file') must precede _display_records", 
-   	                                       force_exit => 1 });
+   	                                   errstr     => "_load_ua('file') must precede _display_records", 
+   	                                   force_exit => 1 });
   } 
 
 
@@ -202,8 +202,8 @@ if ( $data =~ m{^9[0-2]} or $data =~ m{^570[0-9]}) {
 else
    {
     $self->err( __PACKAGE__, __LINE__, {  errno      => '1030', 
-   	        	                            errstr     => "get_entity believes the data is not tc57 data", 
-   	      	                              force_exit => 1 }); 
+   	        	                  errstr     => "get_entity believes the data is not tc57 data", 
+   	      	                          force_exit => 1 }); 
    }
 
 #-----------------------------------------------------------------------
@@ -252,8 +252,8 @@ if ( $status eq 'entity-validated') {
 else
    {
     $self->err( __PACKAGE__, __LINE__, {  errno      => '1030', 
-   	        	                            errstr     => "get_entity believes the entity is not valid", 
-   	      	                              force_exit => 1 }); 
+   	        	                  errstr     => "get_entity believes the entity is not valid", 
+   	      	                          force_exit => 1 }); 
    }
 
 #print $status,"\n";
@@ -338,8 +338,8 @@ elsif ( $type eq 'BASEII_TC57_7_CHIP_RECORD_EXTENSION') {
 print "Record $record_type","\n";	
 
 open my $fh,"<$self->{_template_file}" or $self->err( __PACKAGE__, __LINE__, {  errno      => '1012', 
-   	      	                                                                    errstr     => "not able to read $self->{_template_file}", 
-   	      	                                                                    force_exit => 1 });
+   	      	                                                                errstr     => "not able to read $self->{_template_file}", 
+   	      	                                                                force_exit => 1 });
 	
   while (<$fh>) {
   	chomp;
@@ -802,8 +802,8 @@ DESCRIPTION
  
  if ( $self->{'_trace_file'} ) {
   open my $th, ">> $self->{'_trace_file'}" or $self->err( __PACKAGE__, __LINE__, {  errno      => '1012', 
-        	                                                                        errstr     => "not able to write $self->{'_trace_file'}", 
-   	     	                                                                        force_exit => 1 });
+        	                                                                    errstr     => "not able to write $self->{'_trace_file'}", 
+   	     	                                                                    force_exit => 1 });
   print $th $self->get_sysdate('style2') . "[TRACE][$line] ${tabs}$text","\n";
   close $th;
  } 
