@@ -845,10 +845,6 @@ my $errno      = $$hashref{errno} ? $$hashref{errno} : '0';
 my $force_exit = $$hashref{force_exit};
 my $force_dump = $$hashref{force_dump};
 
-# in certain circumstances err can be called when there is no error
-# but because a statement returned 0 or false, it is interpeted as
-# an error 
-
 return if ( $errno eq '0' );
 print "err [package{".$package.'}], '."[line{".$line.'}], ' .  "[error#{".$errno.'}], ' .  "[error string{".$errstr.'}]', "\n\n";
 
